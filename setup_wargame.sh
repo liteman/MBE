@@ -57,6 +57,7 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 # Create main user
 useradd -m -s /bin/bash $REALUSER
+passwd $REALUSER
 adduser $REALUSER sudo
 
 # install ssh key
