@@ -52,7 +52,7 @@ touch .hushlogin
 # update and apt-get a ton of stuff
 apt-get update
 apt-get -y upgrade
-apt-get -y install unattended-upgrades htop fonts-inconsolata git gdb gcc gcc-multilib g++ g++-multilib git ltrace linux-source openssh-server python-pip ipython python-dev vim guile-2.0 unzip socat libncurses5-dev texinfo
+apt-get -y install nano unattended-upgrades htop fonts-inconsolata git gdb gcc gcc-multilib g++ g++-multilib git ltrace linux-source openssh-server python-pip ipython python-dev vim guile-2.0 unzip socat libncurses5-dev texinfo
 sudo dpkg-reconfigure -plow unattended-upgrades
 
 # Create main user
@@ -175,7 +175,7 @@ mkdir $TOOLS_DIR
 chmod 777 $TOOLS_DIR
 
 source ./external_tools.sh
-install_pip2s
+install_pwntools
 install_gdb_peda
 install_checksec
 install_radare2
@@ -214,6 +214,7 @@ cp $SKEL_DIR/.bashrc $BASHRC
 ; echo "alias ls='ls --color=auto -l'" \
 ; echo "alias checksec='checksec --file'" \
 ; echo "alias ropgadget='ROPgadget --binary'" \
+; echo "alias nano='nano -ET4'" \
 ; echo "alias gdb='gdb -q'") >> $BASHRC
 echo "[+] Configured bash!"
 

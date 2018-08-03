@@ -5,17 +5,25 @@
 #########################################
 
 # install pip packages
-function install_pip2s {
-  easy_install -U pip requests
-  pip2 install colorama git+https://github.com/Gallopsled/pwntools#egg=pwntools docopt capstone ropgadget libformatstr xortool
+function install_pwntools {
+
+  apt install -y python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
+  pip install requests
+  pip install --upgrade pip
+  pip install --upgrade pwntools
+
+  # Lets see if these things are fixed now in 2018 -- liteman
+
+  #easy_install -U pip requests
+  #pip2 install colorama git+https://github.com/Gallopsled/pwntools#egg=pwntools docopt capstone ropgadget libformatstr xortool
   # capstone is weird
-  cp /usr/local/lib/python2.7/dist-packages/usr/lib/python2.7/dist-packages/capstone/libcapstone.so /usr/lib/libcapstone.so.3
+  #cp /usr/local/lib/python2.7/dist-packages/usr/lib/python2.7/dist-packages/capstone/libcapstone.so /usr/lib/libcapstone.so.3
   # patch pwntools in a terrible way
-  if [ `uname -i` == 'i686' ]; then
-      sed -i 's/platform\.machine()/"i386"/' /usr/local/lib/python2.7/dist-packages/pwnlib/asm.py
-  fi
+  #if [ `uname -i` == 'i686' ]; then
+  #    sed -i 's/platform\.machine()/"i386"/' /usr/local/lib/python2.7/dist-packages/pwnlib/asm.py
+  #fi
 }
-export -f install_pip2s
+export -f install_pwntools
 
 # setup gdb PEDA
 function install_gdb_peda {
@@ -24,8 +32,9 @@ function install_gdb_peda {
   apt-get remove -y gdb
 
   # grab gdb
+  # Upgraded to 8.1
   cd /tmp
-  wget -O gdb.pkg.tar.xz http://ftp.gnu.org/gnu/gdb/gdb-7.9.tar.xz
+  wget -O gdb.pkg.tar.xz http://ftp.gnu.org/gnu/gdb/gdb-8.1.tar.xz
   tar -Jxf gdb.pkg.tar.xz
 
   # compile gdb
@@ -55,7 +64,7 @@ export -f install_gdb_peda
 function install_checksec {
   OPWD=$PWD
   cd /usr/local/bin
-  wget https://github.com/slimm609/checksec.sh/raw/master/checksec -O checksec
+  wget https://raw.githubusercontent.com/slimm609/checksec.sh/master/checksec -O checksec
   chmod +x checksec
   echo "[+] Installed checksec!"
   cd $OPWD
