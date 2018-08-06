@@ -51,7 +51,7 @@ touch .hushlogin
 
 # update and apt-get a ton of stuff
 yum update
-yum install -y nano htop fonts-inconsolata git gdb gcc gcc-multilib g++ g++-multilib git ltrace linux-source openssh-server python-pip ipython python-dev vim guile-2.0 unzip socat libncurses5-dev texinfo
+yum install -y nano git gdb gcc gcc-c++ git ltrace kernel-devel openssh-server python python-devel vim guile guile-devel unzip socat ncurses ncurses-devel texinfo
 #sudo dpkg-reconfigure -plow unattended-upgrades
 
 # Create main user
