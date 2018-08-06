@@ -38,7 +38,7 @@ export TOOLOWNER='toolman'
 export VIMRC=$(echo $SKEL_LINK_DIR/.vimrc)
 export SCREENRC=$(echo $SKEL_LINK_DIR/.screenrc)
 export BASHRC=$(echo $SKEL_LINK_DIR/.bashrc)
-export PROFILE=$(echo $SKEL_LINK_DIR/.profile)
+export PROFILE=$(echo $SKEL_LINK_DIR/.bash_profile)
 export GDBINIT=$(echo $SKEL_LINK_DIR/.gdbinit)
 export R2CONF=$(echo $SKEL_LINK_DIR/.radare2rc)
 
@@ -221,8 +221,8 @@ cp $SKEL_DIR/.bashrc $BASHRC
 ; echo "alias gdb='gdb -q'") >> $BASHRC
 echo "[+] Configured bash!"
 
-# setup .profile
-cp $SKEL_DIR/.profile $PROFILE
+# setup .bash_profile
+cp $SKEL_DIR/.bash_profile $PROFILE
 echo "[+] Configured profile!"
 
 # setup .gdbinit
@@ -245,7 +245,7 @@ rm -rf $SKEL_DIR
 mkdir $SKEL_DIR
 ln -s $VIMRC $SKEL_DIR/.vimrc
 ln -s $BASHRC $SKEL_DIR/.bashrc
-ln -s $PROFILE $SKEL_DIR/.profile
+ln -s $PROFILE $SKEL_DIR/.bash_profile
 ln -s $GDBINIT $SKEL_DIR/.gdbinit
 ln -s $R2CONF $SKEL_DIR/.radare2rc
 ln -s $SKEL_LINK_DIR/.config $SKEL_DIR/.config
