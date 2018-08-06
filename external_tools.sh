@@ -5,9 +5,8 @@
 #########################################
 
 # install pip packages
-function install_pwntools {
-
-  yum install -y python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
+function install_pwntools {  
+  yum install -y git openssl-devel libffi-devel 
   pip install requests
   pip install --upgrade pip
   pip install --upgrade pwntools
