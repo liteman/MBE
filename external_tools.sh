@@ -7,7 +7,7 @@
 # install pip packages
 function install_pwntools {
 
-  apt install -y python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
+  yum install -y python2.7 python-pip python-dev git libssl-dev libffi-dev build-essential
   pip install requests
   pip install --upgrade pip
   pip install --upgrade pwntools
@@ -29,7 +29,7 @@ export -f install_pwntools
 function install_gdb_peda {
   OPWD=$PWD
   # remove gdb if it exists on this system
-  apt-get remove -y gdb
+  yum remove -y gdb
 
   # grab gdb
   # Upgraded to 8.1

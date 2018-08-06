@@ -50,10 +50,9 @@ export R2CONF=$(echo $SKEL_LINK_DIR/.radare2rc)
 touch .hushlogin
 
 # update and apt-get a ton of stuff
-apt-get update
-apt-get -y upgrade
-apt-get -y install nano unattended-upgrades htop fonts-inconsolata git gdb gcc gcc-multilib g++ g++-multilib git ltrace linux-source openssh-server python-pip ipython python-dev vim guile-2.0 unzip socat libncurses5-dev texinfo
-sudo dpkg-reconfigure -plow unattended-upgrades
+yum update
+yum install -y nano htop fonts-inconsolata git gdb gcc gcc-multilib g++ g++-multilib git ltrace linux-source openssh-server python-pip ipython python-dev vim guile-2.0 unzip socat libncurses5-dev texinfo
+#sudo dpkg-reconfigure -plow unattended-upgrades
 
 # Create main user
 useradd -m -s /bin/bash $REALUSER
