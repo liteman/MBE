@@ -53,7 +53,7 @@ touch .hushlogin
 yum update
 yum install -y nano git gdb gcc gcc-c++ git ltrace kernel-devel openssh-server python python-devel vim guile guile-devel unzip socat ncurses ncurses-devel texinfo make
 curl "https://bootstrap.pypa.io/get-pip.py" -o get-pip.py
-python git-pip.py
+python get-pip.py
 
 #sudo dpkg-reconfigure -plow unattended-upgrades
 
