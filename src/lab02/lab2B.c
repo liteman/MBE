@@ -11,6 +11,7 @@ char* exec_string = "/bin/sh";
 
 void shell(char* cmd)
 {
+	setuid(geteuid());
 	system(cmd);
 }
 

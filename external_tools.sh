@@ -7,9 +7,9 @@
 # install pip packages
 function install_pwntools {  
   yum install -y git openssl-devel libffi-devel 
-  pip install requests
-  pip install --upgrade pip
-  pip install --upgrade pwntools
+  python -m pip install requests
+  #pip install --upgrade pip
+  #pip install --upgrade pwntools
 
   # Lets see if these things are fixed now in 2018 -- liteman
 

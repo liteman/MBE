@@ -52,8 +52,8 @@ touch .hushlogin
 # update and apt-get a ton of stuff
 yum update
 yum install -y nano git gdb gcc gcc-c++ git ltrace kernel-devel openssh-server python python-devel vim guile guile-devel unzip socat ncurses ncurses-devel texinfo make
-curl "https://bootstrap.pypa.io/get-pip.py" -o get-pip.py
-python get-pip.py
+#curl "https://bootstrap.pypa.io/get-pip.py" -o get-pip.py
+#python get-pip.py
 
 #sudo dpkg-reconfigure -plow unattended-upgrades
 
@@ -63,13 +63,13 @@ passwd $REALUSER
 adduser $REALUSER sudo
 
 # install ssh key
-HOME_DIR=$(eval echo ~$REALUSER)
-sudo -u $REALUSER mkdir $HOME_DIR/.ssh
-chmod 700 $HOME_DIR/.ssh
-sudo -u $REALUSER echo $PUBKEY > $HOME_DIR/.ssh/authorized_keys
-chmod 600 $HOME_DIR/.ssh/authorized_keys
-chown $REALUSER:$REALUSER $HOME_DIR/.ssh/authorized_keys
-restart ssh
+#HOME_DIR=$(eval echo ~$REALUSER)
+#sudo -u $REALUSER mkdir $HOME_DIR/.ssh
+#chmod 700 $HOME_DIR/.ssh
+#sudo -u $REALUSER echo $PUBKEY > $HOME_DIR/.ssh/authorized_keys
+#chmod 600 $HOME_DIR/.ssh/authorized_keys
+#chown $REALUSER:$REALUSER $HOME_DIR/.ssh/authorized_keys
+#restart ssh
 
 # set perms
 chmod 0700 $HOME_DIR
@@ -178,8 +178,8 @@ mkdir $TOOLS_DIR
 chmod 777 $TOOLS_DIR
 
 source ./external_tools.sh
-install_pwntools
-install_gdb_peda
+#install_pwntools
+#install_gdb_peda
 install_checksec
 install_radare2
 install_fixenv
