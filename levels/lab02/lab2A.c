@@ -10,6 +10,7 @@
 void shell()
 {
 	printf("You got it\n");
+	setuid(geteuid());
 	system("/bin/sh");
 }
 
@@ -52,7 +53,8 @@ int main(int argc, char** argv)
 		return EXIT_FAILURE;
 	}
 
-	concatenate_first_chars();
+	//concatenate_first_chars();
+	shell();
 
 	printf("Not authenticated\n");
 	return EXIT_SUCCESS;

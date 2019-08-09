@@ -10,6 +10,7 @@
 void shell()
 {
 	printf("You did it.\n");
+	setuid(geteuid());
 	system("/bin/sh");
 }
 
