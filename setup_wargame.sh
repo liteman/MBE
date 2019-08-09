@@ -179,7 +179,7 @@ chmod 777 $TOOLS_DIR
 
 source ./external_tools.sh
 #install_pwntools
-#install_gdb_peda
+install_gdb_peda
 install_checksec
 install_radare2
 install_fixenv
