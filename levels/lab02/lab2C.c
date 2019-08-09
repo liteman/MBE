@@ -9,9 +9,19 @@
 
 void shell()
 {
+	FILE *fptr;
+	char c;
 	printf("You did it.\n");
-	setuid(geteuid());
-	system("/bin/sh");
+	fptr = ("/home/lab2b/.pass", "r");
+	c = fgetc(fptr);
+	while (c != EOF)
+	{
+		printf ("%c", c);
+		c = fgetc(fptr);
+	}
+	fclose(fptr);
+	//setuid(geteuid());
+	//system("/bin/sh");
 }
 
 int main(int argc, char** argv)
